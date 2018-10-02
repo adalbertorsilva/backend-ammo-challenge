@@ -1,0 +1,49 @@
+{
+  "name": "backend-ammo-challenge",
+  "version": "1.0.0",
+  "description": "Backend to list products on a single page aplication",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "NODE_ENV=test npx sequelize db:migrate; jest --forceExit --verbose",
+    "start-dev": "npx nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adalbertorsilva/backend-ammo-challenge.git"
+  },
+  "keywords": [
+    "Products",
+    "ammo"
+  ],
+  "author": "Adalberto Junior",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adalbertorsilva/backend-ammo-challenge/issues"
+  },
+  "homepage": "https://github.com/adalbertorsilva/backend-ammo-challenge#readme",
+  "dependencies": {
+    "auto-bind": "^1.2.1",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "require-all": "^3.0.0",
+    "sequelize": "^4.39.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^1.1.0",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.4",
+    "sinon": "^6.3.4",
+    "supertest": "^3.3.0"
+  }
+}

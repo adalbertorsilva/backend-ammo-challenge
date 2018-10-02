@@ -1,22 +1,16 @@
 'use strict'
-const { test_seed: testSeed } = require('./utils')
+const { test_seed: testSeed, seed } = require('./utils')
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
+  up: (queryInterface) => {
     if (process.env.NODE_ENV === 'test') {
       return queryInterface.bulkInsert('Products', testSeed, {})
     }
 
-    return queryInterface.bulkInsert('Products', [], {})
+    return queryInterface.bulkInsert('Products', seed, {})
   },
 
-  down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkDelete('Person', null, {});
-    */
+  down: (queryInterface) => {
+    return queryInterface.bulkDelete('Products', null, {})
   }
 }

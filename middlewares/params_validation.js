@@ -1,6 +1,7 @@
 const autoBind = require('auto-bind')
 const { validate } = require('joi')
 const { products: productsSchema } = require('../schemas')
+const { logger } = require('../config')
 
 class ParamsValidationMiddleware {
   constructor () {
@@ -12,6 +13,7 @@ class ParamsValidationMiddleware {
       this.validateParams(req.query)
       next()
     } catch (error) {
+      logger.error(`AN ERROR OCCURRED ---> ${error.message}`)
       res.status(error.status).send({ errorMessage: error.message })
     }
   }

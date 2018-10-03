@@ -1,7 +1,7 @@
 const autoBind = require('auto-bind')
 const { validate } = require('joi')
 const { products: productsSchema } = require('../schemas')
-const { logger } = require('../config')
+const logger = require('../config/logger')
 
 class ParamsValidationMiddleware {
   constructor () {

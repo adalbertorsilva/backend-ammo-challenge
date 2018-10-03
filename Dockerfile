@@ -1,14 +1,12 @@
-
-FROM node:alpine
+FROM node:latest
 
 WORKDIR /usr/src/app
 
 COPY . ./
 
-RUN  apk add postgresql-client && npm install && chmod +x init.sh
+RUN  apt-get update && apt-get install -y postgresql-client && npm install && chmod +x init.sh
 
 EXPOSE 3000
 
-RUN cat init.sh
-
 CMD [ "./init.sh" ]
+

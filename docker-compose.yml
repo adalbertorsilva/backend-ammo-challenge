@@ -2,7 +2,7 @@ version: '3'
 
 services: 
   app:
-    image: adalbertorsilvaje/bionexo-challenge:latest
+    image: adalbertorsilvajr/backend-ammo-challenge:latest
     environment:
       - DATABASE_HOST=db
       - DATABASE_USER=postgres
@@ -20,3 +20,5 @@ services:
     restart: always
     ports: 
       - 5433:5432
+
+

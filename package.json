@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npx sequelize db:create; npx sequelize db:migrate; npx sequelize db:seed:all; node index.js",
     "test": "NODE_ENV=test npx sequelize db:migrate; NODE_ENV=test npx sequelize db:seed:all; jest --forceExit --verbose",
-    "start-dev": "npx nodemon index.js"
+    "start-dev": "npx nodemon index.js",
+    "linter": "npx eslint __test__ config controllers jest migrations models routes seeders index.js jest.config.js"
   },
   "repository": {
     "type": "git",
@@ -46,5 +47,11 @@
     "nodemon": "^1.18.4",
     "sinon": "^6.3.4",
     "supertest": "^3.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run linter",
+      "pre-push": "npm test"
+    }
   }
 }

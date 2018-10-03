@@ -44,7 +44,7 @@ module.exports = [{
   product_value: 30
 },
 {
-  product_name: 'stripped socks',
+  product_name: 'STRIPPED SOCKS',
   product_image: 'some striped socks s3 image url',
   product_value: 10
 }]

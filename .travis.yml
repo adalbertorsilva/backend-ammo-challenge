@@ -3,6 +3,11 @@ node_js:
   - '9'
 services:
   - postgresql
+addons:
+  postgresql: 9.6
+  apt:
+    packages:
+    - postgresql-9.6-postgis-2.3
 before_script:
   - psql -c 'CREATE DATABASE ammo_challenge_test;' -U postgres
 deploy:

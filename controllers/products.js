@@ -14,12 +14,12 @@ class ProductController {
   }
 
   mountQueryParams (req) {
-    const productName = req.query.product_name ? req.query.product_name : ''
+    const { product_name: productName, limit, offset } = req.query
 
     return {
-      limit: req.query.limit ? req.query.limit : 10,
-      offset: (!productName && req.query.offset) ? req.query.offset : 0,
-      where: { product_name: { $iLike: `%${productName}%` } }
+      limit: limit || 10,
+      offset: (!productName && offset) ? offset : 0,
+      where: { product_name: { $iLike: `%${productName || ''}%` } }
     }
   }
 }

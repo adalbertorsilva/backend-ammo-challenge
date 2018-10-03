@@ -1,7 +1,7 @@
 const request = require('supertest')
 const { app } = require('../../config')
 
-describe('PRODUCTS CONTROLLER', () => {
+describe('PRODUCTS CONTROLLER INTEGRATION TEST', () => {
   describe('GET', () => {
     it('should return a 200 status and a list of 10 objects when getting / from products api', async () => {
       const response = await request(app).get('/api/products')

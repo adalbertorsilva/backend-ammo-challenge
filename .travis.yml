@@ -1,0 +1,9 @@
+language: node_js
+services:
+  - postgresql
+before_script:
+  - psql -c 'CREATE DATABASE ${DATABASE_NAME};' -U postgres
+deploy:
+  provider: heroku
+  api_key: ${HEROKU_API_KEY}
+  app: backend-ammo-challenge

@@ -8,7 +8,8 @@ module.exports = (sequelize) => {
       return super.init({
         product_name: DataTypes.STRING,
         product_image: DataTypes.STRING,
-        product_value: DataTypes.DECIMAL
+        product_value: DataTypes.DECIMAL,
+        category: DataTypes.STRING
       }, { sequelize, underscored: true, timestamps: false })
     }
   }

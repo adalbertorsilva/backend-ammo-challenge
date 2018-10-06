@@ -18,7 +18,7 @@ class ProductController {
 
     return {
       limit: limit || 10,
-      offset: (!productName && offset) ? offset : 0,
+      offset: offset || 0,
       where: { product_name: { $iLike: `%${productName || ''}%` } }
     }
   }

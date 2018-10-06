@@ -33,7 +33,7 @@ describe('PRODUCTS CONTROLLER UNIT TEST', () => {
     })
   })
 
-  it('shoudl return an 0 value offset param when product_name is not empty', () => {
+  it('shoudl return a non empty where clause when product_name is not empty', () => {
     const req = {
       query: {
         product_name: "i'm not empty",
@@ -44,7 +44,7 @@ describe('PRODUCTS CONTROLLER UNIT TEST', () => {
 
     expect(productController.mountQueryParams(req)).toEqual({
       limit: 10,
-      offset: 0,
+      offset: 5,
       where: { product_name: { $iLike: `%i'm not empty%` } }
     })
   })

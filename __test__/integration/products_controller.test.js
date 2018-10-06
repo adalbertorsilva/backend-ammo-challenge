@@ -27,19 +27,19 @@ describe('PRODUCTS CONTROLLER INTEGRATION TEST', () => {
       expect(response.body.products.count).toEqual(10)
     })
 
-    it('should return a 200 status and a list of 2 objects when getting / from products api with a 6 limit, 6 offset and a poduct_name url param', async () => {
-      const response = await request(app).get('/api/products?limit=6&offset=6&product_name=flamingo')
+    it('should return a 200 status and a list of 1 objects when getting / from products api with a 2 limit, 1 offset and a poduct_name url param', async () => {
+      const response = await request(app).get('/api/products?limit=2&offset=1&product_name=flamingo')
       expect(response.status).toEqual(200)
       expect(response.body).toHaveProperty('products')
-      expect(response.body.products.rows).toHaveLength(2)
+      expect(response.body.products.rows).toHaveLength(1)
       expect(response.body.products.count).toEqual(2)
     })
 
-    it('should return a 200 status and a list of 2 objects when getting / from products api with a 6 limit, 6 offset and a poduct_name url param independently of the spell case', async () => {
-      const response = await request(app).get('/api/products?limit=6&offset=6&product_name=socks')
+    it('should return a 200 status and a list of 2 objects when getting / from products api with a 2 limit, 1 offset and a poduct_name url param independently of the spell case', async () => {
+      const response = await request(app).get('/api/products?limit=2&offset=1&product_name=socks')
       expect(response.status).toEqual(200)
       expect(response.body).toHaveProperty('products')
-      expect(response.body.products.rows).toHaveLength(2)
+      expect(response.body.products.rows).toHaveLength(1)
       expect(response.body.products.count).toEqual(2)
     })
 
